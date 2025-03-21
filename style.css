@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Raleway", sans-serif;
+  src: url(./assets/fonts/Raleway-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Expletus Sans", sans-serif;
+  src: url(./assets/fonts/ExpletusSans-VariableFont_wght.ttf);
+}
+
+#header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-inline: 40px;
+  margin: 0;
+}
+
+#footer {
+  height: 100px;
+  padding-inline: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main {
+  padding-inline: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  overflow-y: auto;
+  text-align: flex-start;
+}
+
+#left {
+  padding-inline: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  overflow-y: auto;
+  text-align: flex-start;
+}
+
+#right {
+  padding-inline: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  overflow-y: auto;
+  text-align: flex-start;
+}
+
+h1 {
+  font-family: "Expletus Sans", sans-serif;
+}
+
+h2 {
+  font-family: "Expletus Sans", sans-serif;
+}
+
+@media (max-width: 700px) {
+  .hidemobile {
+    display: none;
+  }
+}
+
+@media (min-width: 701px) {
+  .hidedesktop {
+    display: none;
+  }
+}
