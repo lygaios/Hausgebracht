@@ -8,6 +8,14 @@
   src: url(./assets/fonts/ExpletusSans-VariableFont_wght.ttf);
 }
 
+h1 {
+  font-family: "Expletus Sans", sans-serif;
+}
+
+h2 {
+  font-family: "Expletus Sans", sans-serif;
+}
+
 #header {
   height: 100px;
   display: flex;
@@ -29,29 +37,26 @@
 }
 
 #main {
-  padding-inline: 40px;
   padding-bottom: 10px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
   overflow-y: auto;
   text-align: flex-start;
 }
 
 #left {
-  padding-inline: 40px;
+  min-width: 500px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
   overflow-y: auto;
-  text-align: flex-start;
+  border: solid 1px lightgray;
 }
 
 #right {
+  width: 200px;
   padding-inline: 40px;
   padding-bottom: 10px;
   display: flex;
@@ -59,15 +64,36 @@
   align-items: flex-start;
   gap: 40px;
   overflow-y: auto;
-  text-align: flex-start;
+  border: solid 1px lightgray;
 }
 
-h1 {
-  font-family: "Expletus Sans", sans-serif;
+#hero {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url(./assets/img/hamburger.jpg);
+  background-size: cover;
+  background-position: bottom;
+  border: solid 1px lightgray;
 }
 
-h2 {
-  font-family: "Expletus Sans", sans-serif;
+#hero-logo {
+  z-index: 1;
+  margin-bottom: -25px;
+}
+
+#menu-box {
+  padding-inline: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  gap: 40px;
+  overflow-y: auto;
+  border: solid 1px lightgray;
 }
 
 @media (max-width: 700px) {
