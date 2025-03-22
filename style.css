@@ -113,6 +113,7 @@ h2 {
   }
   #left {
     min-width: 300px;
+  }
 }
 
 @media (min-width: 701px) {
