@@ -37,10 +37,20 @@ h2 {
   align-items: center;
 }
 
+#overlay {
+  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 90;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 #main {
   padding-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: flex-start;
 }
 
@@ -49,7 +59,7 @@ h2 {
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
   border: solid 1px lightgray;
 }
@@ -60,7 +70,7 @@ h2 {
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   border: solid 1px lightgray;
 }
@@ -107,10 +117,23 @@ h2 {
   border: solid 1px lightgray;
 }
 
+#sidebar-cart {
+
+}
+
+#overlay-cart {
+  background-color: white;
+}
+
 @media (max-width: 700px) {
   .hidemobile {
     display: none;
   }
+
+  #right {
+    display: none;
+  }
+
   #left {
     min-width: 300px;
   }
