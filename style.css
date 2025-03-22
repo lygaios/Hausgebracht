@@ -41,7 +41,6 @@ h2 {
   padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  overflow-y: auto;
   text-align: flex-start;
 }
 
@@ -52,7 +51,6 @@ h2 {
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
-  overflow-y: auto;
   border: solid 1px lightgray;
 }
 
@@ -63,8 +61,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 40px;
-  overflow-y: auto;
+  gap: 10px;
   border: solid 1px lightgray;
 }
 
@@ -92,8 +89,21 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
-  gap: 40px;
+  gap: 20px;
   overflow-y: auto;
+  flex-wrap: wrap;
+  border: solid 1px lightgray;
+}
+
+.cart {
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: sticky;
+  overflow-y: auto;
+  flex-wrap: wrap;
   border: solid 1px lightgray;
 }
 
@@ -101,6 +111,8 @@ h2 {
   .hidemobile {
     display: none;
   }
+  #left {
+    min-width: 300px;
 }
 
 @media (min-width: 701px) {
