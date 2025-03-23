@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  color: #7dfdde;
 }
 
 #button-bar {
@@ -15,24 +14,22 @@
 .button {
   padding: 5px;
   border-radius: 5px;
-  background-color: #08231c;
-  border: solid 1px #4bcfab;
-  color: #4bcfab;
+  background-color: #ff8000;
+  border: outset 1px #ff8000;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .button:hover {
-  box-shadow: 0 0 20px #7dfdde;
-  border: solid 1px #7dfdde;
-  color: #7dfdde;
+  box-shadow: 0 0 10px #ffa200;
+  background-color: #ffa200;
+  color: #ffffff;
+  border:inset 1px #ffa200;
 }
 
 .content-box {
   padding: 5px;
   border-radius: 5px;
-  background-color: #08090b;
-  border: solid 1px #4bcfab;
-  color: #7dfdde;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -43,14 +40,11 @@
   padding: 5px;
   box-sizing: border-box;
   border-radius: 5px;
-  background-color: #08231c;
-  border: solid 1px #4bcfab;
-  color: #4bcfab;
   transition: border-color 0.3s ease;
 }
 
 .text-input:focus {
-  box-shadow: 0 0 20px #4bcfab;
-  border: solid 1px #4bcfab;
+  box-shadow: 0 0 20px #ffa200;
+  border: solid 1px #ff8000;
   outline: none;
 }
