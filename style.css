@@ -118,11 +118,44 @@ h2 {
 }
 
 #sidebar-cart {
-
+  border: solid 1px lightgray;
 }
 
 #overlay-cart {
   background-color: white;
+}
+
+.dishes-box {
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  border: solid 1px lightgray;
+}
+
+.data-block {
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  border: solid 1px lightgray;
+}
+
+.interact-row {
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: space-evenly;
+  justify-content: center;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  border: solid 1px lightgray;
 }
 
 @media (max-width: 700px) {
