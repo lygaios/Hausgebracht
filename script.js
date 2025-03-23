@@ -22,5 +22,6 @@ function getDishesTemplate(i) {
             <p>${dishes[i].price.toFixed(2)}</p>
         </div>
         <div class="interact-row"></div>
-    </div>`
+    </div>
+    `
 }

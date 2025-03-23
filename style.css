@@ -66,7 +66,7 @@ h2 {
 
 #right {
   width: 200px;
-  padding-inline: 40px;
+  padding-inline: 10px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -94,13 +94,23 @@ h2 {
 }
 
 #menu-box {
-  padding-inline: 40px;
+  min-width: 480px;
+  min-height: 400px;
+  padding-inline: 10px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
   gap: 20px;
-  overflow-y: auto;
+  flex-wrap: wrap;
+  border: solid 1px lightgray;
+}
+
+#menu-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  gap: 10px;
   flex-wrap: wrap;
   border: solid 1px lightgray;
 }
@@ -126,12 +136,11 @@ h2 {
 }
 
 .dishes-box {
-  padding-inline: 10px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  overflow-y: auto;
   flex-wrap: wrap;
   border: solid 1px lightgray;
 }
@@ -142,7 +151,6 @@ h2 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  overflow-y: auto;
   flex-wrap: wrap;
   border: solid 1px lightgray;
 }
@@ -153,7 +161,6 @@ h2 {
   flex-direction: row;
   align-items: space-evenly;
   justify-content: center;
-  overflow-y: auto;
   flex-wrap: wrap;
   border: solid 1px lightgray;
 }
@@ -170,8 +177,11 @@ h2 {
   #left {
     min-width: 300px;
   }
-}
 
+  #menu-box {
+    min-width: 280px;
+  }
+}
 @media (min-width: 701px) {
   .hidedesktop {
     display: none;
