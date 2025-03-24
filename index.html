@@ -19,8 +19,10 @@
       <h1 class="hidemobile">Hausgebracht</h1>
     </header>
     <div id="overlay" class="dnone">
-      <div class="cart" id="overlay-cart">
+
+      <div class="cart" id="overlay-cart-box">
         <h2>Warenkorb</h2>
+        <div class="cart" id="overlay-cart"></div>
       </div>
     </div>
     <section id="main">
@@ -31,12 +33,16 @@
         <div id="menu-box">
           <h2>Gerichte</h2>
           <div id="menu-contents"></div>
-          <button onclick="showCartOverlay()" class="button hidedesktop" id="get-cart-button">Warenkorb</button>
+          <button onclick="showCartOverlay()" class="button hidedesktop" id="get-cart-button">
+            Warenkorb 
+            <br>
+          </button>
         </div>
       </div>
       <div id="right" class="hidemobile">
-        <div class="cart" id="sidebar-cart">
+        <div class="cart" id="sidebar-cart-box">
           <h2>Warenkorb</h2>
+          <div class="cart" id="sidebar-cart"></div>
         </div>
 
       </div>

@@ -127,12 +127,20 @@ h2 {
   border: solid 1px lightgray;
 }
 
-#sidebar-cart {
+#sidebar-cart-box {
   border: solid 1px lightgray;
 }
 
-#overlay-cart {
+#overlay-cart-box {
   background-color: white;
+}
+
+#overlay-cart {
+  border: solid 1px lightgray;
+}
+
+#sidebar-cart {
+  border: solid 1px lightgray;
 }
 
 .dishes-box {
