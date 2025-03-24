@@ -21,7 +21,18 @@ function getDishesTemplate(i) {
             <h3>${dishes[i].name}</h2>
             <p>${dishes[i].price.toFixed(2)} €</p>
         </div>
-        <div class="interact-row"></div>
+        <div class="interact-row">
+            <button id="less" class="button" onclick "removeDish()">-</button>
+            <button id="more" class="button" onclick "addDish()">+</button>
+        </div>
     </div>
     `;
+}
+
+function removeDish() {
+
+}
+
+function addDish() {
+    
 }
