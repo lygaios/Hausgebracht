@@ -47,6 +47,14 @@ h2 {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+#overlay-header {
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: center; 
+  gap: 40px;
+}
+
 #main {
   padding-bottom: 10px;
   display: flex;

@@ -6,6 +6,10 @@ function showCartOverlay() {
   document.getElementById("overlay").classList.remove("dnone");
 }
 
+function closeOverlay() {
+    document.getElementById("overlay").classList.add("dnone"); 
+}
+
 function renderDishes() {
   let dishesRef = document.getElementById("menu-contents");
   dishesRef.innerHTML = "";
