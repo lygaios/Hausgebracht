@@ -20,7 +20,8 @@ function renderDishes() {
     dishesRef.innerHTML = "";
     for (let i = 0; i < dishes.length; i++) {
       dishesRef.innerHTML += getDishesTemplate(i);
-      renderCart(i);
+
+      //renderCart(i);
     }
   }
   
