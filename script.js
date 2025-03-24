@@ -11,16 +11,20 @@ function renderDishes() {
   dishesRef.innerHTML = "";
   for (let i = 0; i < dishes.length; i++) {
     dishesRef.innerHTML += getDishesTemplate(i);
-    if (document.getElementById("overlay").classList.contains("dnone") == false) {
-      let cartRef = document.getElementById("overlay-cart");
-      for (let j = 0; j < cart.length; j++) {
-        cartRef.innerHTML += getCartTemplate(i, j);
-      }
-    } else {
-      let cartRef = document.getElementById("sidebar-cart");
-      for (let j = 0; j < cart.length; j++) {
-        cartRef.innerHTML += getCartTemplate(i, j);
-      }
+    renderCart(i)
+  }
+}
+
+function renderCart(i) {
+if (document.getElementById("overlay").classList.contains("dnone") == false) {
+    let cartRef = document.getElementById("overlay-cart");
+    for (let j = 0; j < cart.length; j++) {
+      cartRef.innerHTML += getCartTemplate(i, j);
+    }
+  } else {
+    let cartRef = document.getElementById("sidebar-cart");
+    for (let j = 0; j < cart.length; j++) {
+      cartRef.innerHTML += getCartTemplate(i, j);
     }
   }
 }
