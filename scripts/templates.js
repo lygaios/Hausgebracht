@@ -25,3 +25,9 @@ function getCartTemplate(i) {
         </div>
       `;
 }
+
+function getConfirmationTemplate() {
+    return `
+    <p>Ihre Testbestellung war erfolgreich.</p>
+    `;
+}
