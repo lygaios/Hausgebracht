@@ -15,7 +15,7 @@ let dishes = [
         "amount": 0
       },
       {
-        "name": "Hamburger mit Pommes Frites",
+        "name": "Hamburger Classic",
         "price": 14.99,
         "amount": 0
       },

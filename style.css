@@ -157,10 +157,9 @@ h2 {
 
 .dishes-box {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
   border: solid 1px lightgray;
 }
 

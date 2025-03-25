@@ -7,22 +7,20 @@ function showCartOverlay() {
 }
 
 function closeOverlay() {
-    document.getElementById("overlay").classList.add("dnone"); 
+  document.getElementById("overlay").classList.add("dnone");
 }
 
-
-
 function renderDishes() {
-    let dishesRef = document.getElementById("menu-contents");
-    dishesRef.innerHTML = "";
-    for (let i = 0; i < dishes.length; i++) {
-      dishesRef.innerHTML += getDishesTemplate(i);
+  let dishesRef = document.getElementById("menu-contents");
+  dishesRef.innerHTML = "";
+  for (let i = 0; i < dishes.length; i++) {
+    dishesRef.innerHTML += getDishesTemplate(i);
 
-      renderSidebarCart(i);
-      renderOverlayCart(i);
-    }
+    renderSidebarCart(i);
+    renderOverlayCart(i);
   }
-  
+}
+
 function renderSidebarCart(i) {
   let sidebarCartRef = document.getElementById("sidebar-cart");
   sidebarCartRef.innerHTML = "";
@@ -39,24 +37,19 @@ function renderOverlayCart(i) {
   }
 }
 
-  
-  function addDish(i) {
+function addDish(i) {
   let newCartDishName = dishes[i].name;
   let newCartDishPrice = dishes[i].price;
   let newCartDishAmount = dishes[i].amount + 1;
 
-let newCartDish = {name : newCartDishName, price : newCartDishPrice, amount : newCartDishAmount};
+  let newCartDish = { name: newCartDishName, price: newCartDishPrice, amount: newCartDishAmount };
 
-if (cart[i].newCartDishAmount == 1) {
-  cart.push(newCartDish);
-} else {
-  cart[i].amount++;
-}
-      renderDishes(i);
-      renderSidebarCart(i);
-      renderOverlayCart(i);
+  if (cart[i].newCartDishAmount == 1) {
+    cart.push(newCartDish);
+  } else {
+    cart[i].amount++;
   }
-  
-
-  
-  
+  renderDishes(i);
+  renderSidebarCart(i);
+  renderOverlayCart(i);
+}
