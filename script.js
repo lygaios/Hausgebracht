@@ -57,3 +57,16 @@ function addDish(i) {
   renderSidebarCart(i);
   renderOverlayCart(i);
 }
+
+function removeDish(i) {
+  if (cart[i].amount > 1) {
+    cart[i].amount--;
+    dishes[i].amount--;
+  } else {
+    cart.splice(i, 1);
+    dishes[i].amount--;
+  }
+  renderDishes(i);
+  renderSidebarCart(i);
+  renderOverlayCart(i);
+}
