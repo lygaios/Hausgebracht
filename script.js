@@ -1,7 +1,5 @@
 function init() {
   renderDishes();
-  calculateTotalItems(i);
-  getTotalItemsButton(i);
 }
 
 function showCartOverlay() {
@@ -30,9 +28,6 @@ function renderSidebarCart(i) {
     sidebarCartRef.innerHTML += getCartTemplate(i);
     calculateTotalPrice(i);
     getTotalPriceSidebar(i);
-    getTotalPriceOverlay(i);
-    calculateTotalItems(i);
-    getTotalItemsButton(i);
   }
 }
 
@@ -42,9 +37,7 @@ function renderOverlayCart(i) {
   for (let i = 0; i < cart.length; i++) {
     overlayCartRef.innerHTML += getCartTemplate(i);
     calculateTotalPrice(i);
-    getTotalPriceSidebar(i);
     getTotalPriceOverlay(i);
-    calculateTotalItems(i);
     getTotalItemsButton(i);
   }
 }
@@ -88,7 +81,7 @@ function calculateTotalPrice(i) {
   for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price.toFixed(2) * cart[i].amount;
   }
-return totalPrice;
+return totalPrice.toFixed(2)+ ' € ';
 }
 
 function calculateTotalItems(i) {

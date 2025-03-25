@@ -73,13 +73,13 @@ h2 {
 }
 
 #right {
-  width: 200px;
-  padding-inline: 10px;
-  padding-bottom: 10px;
+  width: 250px;
+  padding-inline: 5px;
+  padding-bottom: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   border: solid 1px lightgray;
 }
 
@@ -104,12 +104,12 @@ h2 {
 #menu-box {
   min-width: 480px;
   min-height: 400px;
-  padding-inline: 10px;
-  padding-bottom: 10px;
+  padding-inline: 5px;
+  padding-bottom: 5px;
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
   border: solid 1px lightgray;
 }
@@ -123,19 +123,19 @@ h2 {
   border: solid 1px lightgray;
 }
 
-.cart {
-  padding-inline: 10px;
+.cart-box {
+  padding-inline: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  position: sticky;
-  overflow-y: auto;
   flex-wrap: wrap;
   border: solid 1px lightgray;
 }
 
 #sidebar-cart-box {
+  position: sticky;
+  width: 240px;
   border: solid 1px lightgray;
 }
 
@@ -143,16 +143,29 @@ h2 {
   background-color: white;
 }
 
+.cart {
+  overflow-y: auto;
+}
+
 #overlay-cart {
   border: solid 1px lightgray;
   min-width: 400px;
-  height: 400px;
+  height: 500px;
 }
 
 #sidebar-cart {
   border: solid 1px lightgray;
   width: 180px;
-  height: 400px;
+  height: 500px;
+}
+
+.total-price-box {
+  width: 230px;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
 }
 
 .dishes-box {
@@ -210,12 +223,7 @@ h2 {
   }
 }
 
-.total-price-box {
-  display: flex; 
-  justify-items: center;
-  gap: 5px;
-  flex-wrap: wrap;
-}
+
 
 @media (max-width: 600px) {
   #overlay-cart {
