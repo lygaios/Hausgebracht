@@ -22,6 +22,6 @@ function getCartTemplate(i) {
                   <p>${cart[i].amount}</p> 
                   <button class="button" onclick="addDish(${i})">+</button>
               </div>
-      </div>
+        </div>
       `;
 }

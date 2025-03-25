@@ -26,6 +26,8 @@ function renderSidebarCart(i) {
   sidebarCartRef.innerHTML = "";
   for (let i = 0; i < cart.length; i++) {
     sidebarCartRef.innerHTML += getCartTemplate(i);
+    calculateTotalPrice(i);
+
   }
 }
 
@@ -34,6 +36,7 @@ function renderOverlayCart(i) {
   overlayCartRef.innerHTML = "";
   for (let i = 0; i < cart.length; i++) {
     overlayCartRef.innerHTML += getCartTemplate(i);
+    calculateTotalPrice(i);
   }
 }
 
@@ -69,4 +72,30 @@ function removeDish(i) {
   renderDishes(i);
   renderSidebarCart(i);
   renderOverlayCart(i);
+}
+
+function calculateTotalPrice(i) {
+  let totalPrice = 0;
+  for (let i = 0; i < cart.length; i++) {
+    totalPrice += cart[i].price.toFixed(2) * cart[i].amount;
+  }
+return totalPrice;
+}
+
+function calculateTotalItems(i) {
+  let totalItems = 0;
+  for (let i = 0; i < cart.length; i++) {
+    totalItems += cart[i].amount;
+  }
+return totalItems;
+}
+
+function getTotalPriceSidebar() {
+  let sidebarPriceRef = document.getElementById("total-price-sidebar");
+  sidebarPriceRef.innerHTML = "";
+  sidebarPriceRef.innerHTML = calculateTotalPrice(i);
+}
+
+function getTotalPriceOverlay() {
+  
 }
