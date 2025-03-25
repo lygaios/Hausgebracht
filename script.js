@@ -46,11 +46,11 @@ function addDish(i) {
 
   if (newCartDishAmount == 0) {
     cart.push(newCartDish);
-    cart[i].amount++;
     dishes[i].amount++;
+    cart[i].amount++;
   } else {
-    cart[i].amount++;
     dishes[i].amount++;
+    cart[i].amount++;
   }
   renderDishes(i);
   renderSidebarCart(i);
