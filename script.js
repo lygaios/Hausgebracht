@@ -101,6 +101,7 @@ function getTotalPriceButton(i) {
 
 function orderAndClear() {
     renderConfirmationMessageSidebar()
+    renderConfirmationMessageOverlay()
     cart = [];
     dishes.amount = 0;
     renderDishes();

@@ -31,15 +31,20 @@ h2 {
 
 #footer {
   height: 70px;
-  padding-inline: 40px;
   display: flex;
   justify-content: center;
+  gap: 10px;
   align-items: center;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-inline: 40px;
+  margin: 0;
 }
 
 #overlay {
   z-index: 2;
-  height: 100vh;
+  height: 100rem;
   width: 100%;
   position: absolute;
   top: 90;
@@ -141,6 +146,7 @@ h2 {
 
 #overlay-cart-box {
   background-color: white;
+  padding: 5px;
 }
 
 .cart {
@@ -149,8 +155,8 @@ h2 {
 
 #overlay-cart {
   border: solid 1px lightgray;
-  min-width: 400px;
-  height: 500px;
+  min-width: 300px;
+  height: 400px;
 }
 
 #sidebar-cart {
@@ -199,9 +205,11 @@ h2 {
   border: solid 1px lightgray;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   width: 95%;
-  height: auto;
+  height: 35px;
+  font-size: 14px;
 }
 
 @media (max-width: 750px) {
