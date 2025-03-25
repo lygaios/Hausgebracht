@@ -40,14 +40,17 @@ function renderOverlayCart(i) {
 function addDish(i) {
   let newCartDishName = dishes[i].name;
   let newCartDishPrice = dishes[i].price;
-  let newCartDishAmount = dishes[i].amount + 1;
+  let newCartDishAmount = dishes[i].amount;
 
   let newCartDish = { name: newCartDishName, price: newCartDishPrice, amount: newCartDishAmount };
 
-  if (cart[i].newCartDishAmount == 1) {
+  if (newCartDishAmount == 0) {
     cart.push(newCartDish);
+    cart[i].amount++;
+    dishes[i].amount++;
   } else {
     cart[i].amount++;
+    dishes[i].amount++;
   }
   renderDishes(i);
   renderSidebarCart(i);

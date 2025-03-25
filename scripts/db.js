@@ -32,10 +32,4 @@ let dishes = [
     ]
 
 
-let cart = [
-  {
-    "name": "Zwiebelringe",
-    "price": 8.99,
-    "amount": 0
-  }
-]
+let cart = []
