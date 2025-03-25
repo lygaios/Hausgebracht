@@ -36,7 +36,7 @@ function renderOverlayCart(i) {
   for (let i = 0; i < cart.length; i++) {
     overlayCartRef.innerHTML += getCartTemplate(i);
     getTotalPriceOverlay(i);
-    getTotalPriceButton(i)
+    getTotalPriceButton(i);
   }
 }
 
@@ -51,7 +51,6 @@ function addDish(i) {
     cart.push(newCartDish);
     cart[i].amount++;
     dishes[i].amount++;
-
   } else {
     cart[i].amount++;
     dishes[i].amount++;
@@ -80,9 +79,8 @@ function calculateTotalPrice(i) {
   for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price.toFixed(2) * cart[i].amount;
   }
-return totalPrice.toFixed(2)+ ' € ';
+  return totalPrice.toFixed(2) + " € ";
 }
-
 
 function getTotalPriceSidebar(i) {
   let sidebarPriceRef = document.getElementById("total-price-sidebar-box");
@@ -100,21 +98,21 @@ function getTotalPriceButton(i) {
 }
 
 function orderAndClear() {
-    renderConfirmationMessageSidebar()
-    renderConfirmationMessageOverlay()
-    cart = [];
-    dishes.amount = 0;
-    renderDishes();
-    renderSidebarCart();
-    renderOverlayCart();
-  }
+  renderConfirmationMessageSidebar();
+  renderConfirmationMessageOverlay();
+  cart = [];
+  dishes.amount = 0;
+  renderDishes();
+  renderSidebarCart();
+  renderOverlayCart();
+}
 
-  function renderConfirmationMessageSidebar() {
-    let confirmationRef = document.getElementById("confirmation-sidebar");
-    confirmationRef.innerHTML = `<p>Ihre Testbestellung war erfolgreich.</p>`;
-  }
+function renderConfirmationMessageSidebar() {
+  let confirmationRef = document.getElementById("confirmation-sidebar");
+  confirmationRef.innerHTML = `<p>Ihre Testbestellung war erfolgreich.</p>`;
+}
 
-  function renderConfirmationMessageOverlay() {
-    let confirmationRef = document.getElementById("confirmation-overlay");
-    confirmationRef.innerHTML = `<p>Ihre Testbestellung war erfolgreich.</p>`;
-  }
+function renderConfirmationMessageOverlay() {
+  let confirmationRef = document.getElementById("confirmation-overlay");
+  confirmationRef.innerHTML = `<p>Ihre Testbestellung war erfolgreich.</p>`;
+}

@@ -27,7 +27,7 @@ function getCartTemplate(i) {
 }
 
 function getConfirmationTemplate() {
-    return `
+  return `
     <p>Ihre Testbestellung war erfolgreich.</p>
     `;
 }
