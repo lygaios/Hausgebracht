@@ -5,7 +5,7 @@ function getDishesTemplate(i) {
               <h3>${dishes[i].name}</h2>
               <p>${dishes[i].price.toFixed(2)} €</p>
           </div>
-            <button class="button" onclick "addDish('${i}')">+</button>
+            <button class="button" onclick="addDish(${i})">+</button>
       </div>
       `;
 }
@@ -18,9 +18,9 @@ function getCartTemplate(i) {
                   <p>${cart[i].price.toFixed(2)} €</p>
               </div>
               <div class="interact-row">
-                  <button class="button" onclick "removeDish('${i}')">-</button>
+                  <button class="button" onclick="removeDish(${i})">-</button>
                   <p>${cart[i].amount}</p> 
-                  <button class="button" onclick "addDish('${i}')">+</button>
+                  <button class="button" onclick="addDish(${i})">+</button>
               </div>
       </div>
       `;
