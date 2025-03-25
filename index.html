@@ -27,7 +27,7 @@
         <div class="cart" id="overlay-cart"></div>
         <div class="total-price-box">
           <p>Gesamtsumme:</p>
-          <p id="total-price-overlay"> €</p>
+          <p id="total-price-overlay-box"></p><p> €</p>
         </div>
       </div>
     </div>
@@ -40,8 +40,9 @@
           <h2>Gerichte</h2>
           <div id="menu-contents"></div>
           <button onclick="showCartOverlay()" class="button hidedesktop" id="get-cart-button">
-            Warenkorb 
+            <p>Warenkorb</p>
             <br>
+            <p id="itemcount"></p> 
           </button>
         </div>
       </div>
@@ -51,7 +52,8 @@
           <div class="cart" id="sidebar-cart"></div>
           <div class="total-price-box">
             <p>Gesamtsumme:</p>
-            <p id="total-price-sidebar"> €</p>
+            <br>
+            <p id="total-price-sidebar-box"></p><p> €</p>
           </div>
         </div>
 

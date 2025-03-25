@@ -210,6 +210,13 @@ h2 {
   }
 }
 
+.total-price-box {
+  display: flex; 
+  justify-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 600px) {
   #overlay-cart {
     border: solid 1px lightgray;
