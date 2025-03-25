@@ -47,7 +47,7 @@ h2 {
   height: 100rem;
   width: 100%;
   position: absolute;
-  top: 90;
+  top: 70;
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -106,6 +106,19 @@ h2 {
   margin-bottom: -25px;
 }
 
+#restaurant-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#stars {
+  height: 25px;
+  width: auto;
+}
+
 #menu-box {
   min-width: 480px;
   min-height: 400px;
@@ -128,6 +141,13 @@ h2 {
   border: solid 1px lightgray;
 }
 
+#sidebar-cart-box {
+  top: 70;
+  position: sticky;
+  width: 240px;
+  border: solid 1px lightgray;
+}
+
 .cart-box {
   padding-inline: 5px;
   display: flex;
@@ -135,12 +155,6 @@ h2 {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  border: solid 1px lightgray;
-}
-
-#sidebar-cart-box {
-  position: sticky;
-  width: 240px;
   border: solid 1px lightgray;
 }
 
@@ -161,6 +175,7 @@ h2 {
 
 #sidebar-cart {
   border: solid 1px lightgray;
+  position: sticky;
   width: 180px;
   height: 500px;
 }
