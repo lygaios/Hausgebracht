@@ -54,12 +54,13 @@ function addDish(i) {
 }
 
 function removeDish(i) {
-  if (cart[i].amount > 1) {
-    cart[i].amount--;
+  let cartDish = cart.find(item => item.id === dishes[i].id);
+  if (cartDish.amount > 1) {
+    cartDish.amount--;
     dishes[i].amount--;
   } else {
+    cart.splice(cartDish, 1);
     dishes[i].amount = 0;
-    cart.splice(i, 1);
     nullTotalPrice();
   }
   renderData();
