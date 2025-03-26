@@ -42,29 +42,37 @@ function renderOverlayCart() {
 
 function addDish(i) {
   removeConfirmationMessage();
-  let cartDish = cart.find(item => item.id === dishes[i].id);
+  let cartDish = cart.find(cartDish => cartDish.id === dishes[i].id);
   if (cartDish) {
-    dishes[i].amount++;
     cartDish.amount++;
   } else {
     cart.push({ id: dishes[i].id, name: dishes[i].name, price: dishes[i].price, amount: 1 });
-    dishes[i].amount = 1;
+   
   };
+  if (dishes[i].amount === undefined) {
+    dishes[i].amount = 1;
+  } else {
+    dishes[i].amount++;
+  }
   renderData();
 }
 
 function removeDish(i) {
-  let cartDish = cart.find(item => item.id === dishes[i].id);
-  if (cartDish.amount > 1) {
-    cartDish.amount--;
-    dishes[i].amount--;
-  } else {
+  let cartDish = cart.find(cartDish => cartDish.id === dishes[i].id);
+  if (cartDish.amount == 1) {
     cart.splice(cartDish, 1);
-    dishes[i].amount = 0;
     nullTotalPrice();
-  }
+  } else if (cartDish.amount > 1) {
+    cartDish.amount--;
+  };
+  if (dishes[i].amount > 1) {
+    dishes[i].amount--; 
+  } else if (dishes[i].amount == 1) {
+    dishes[i].amount = 0;
+  };
   renderData();
 }
+
 
 function calculateTotalPrice() {
   let totalPrice = 0;

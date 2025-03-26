@@ -5,7 +5,7 @@ function getDishesTemplate(i) {
               <h3>${dishes[i].name}</h3>
               <p>${dishes[i].price.toFixed(2)} €</p>
           </div>
-            <button class="button" onclick="addDish(${i})">+</button>
+            <button class="button" onclick="addDish(${dishes[i].id})">+</button>
       </div>
       `;
 }
