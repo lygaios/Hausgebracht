@@ -46,12 +46,14 @@ function addDish(i) {
     dishes[i].amount = 1;
     cart.push({ name: dishes[i].name, price: dishes[i].price, amount: 1 });
   } else {
+    for (let i = 0; i < cart.length; i++) {
     cart[i].amount++;
     dishes[i].amount++;
+    }
+    renderDishes(i);
+    renderSidebarCart(i);
+    renderOverlayCart(i);
   }
-  renderDishes(i);
-  renderSidebarCart(i);
-  renderOverlayCart(i);
 }
 
 function removeDish(i) {
