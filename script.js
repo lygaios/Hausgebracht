@@ -61,6 +61,7 @@ function removeDish(i) {
     dishes[i].amount = 0;
     cart[i].price = 0;
     cart.splice(i, 1);
+    nullTotalPrice()
   }
   renderDishes(i);
   renderSidebarCart(i);
@@ -100,6 +101,7 @@ function orderAndClear() {
     cart[j].amount = 0;
   }
   cart = [];
+  nullTotalPrice();
   renderDishes();
   renderSidebarCart();
   renderOverlayCart();
@@ -113,4 +115,25 @@ function renderConfirmationMessageSidebar() {
 function renderConfirmationMessageOverlay() {
   let confirmationRef = document.getElementById("confirmation-overlay");
   confirmationRef.innerHTML = `<p>Ihre Testbestellung war erfolgreich.</p>`;
+}
+
+function nullTotalPrice() {
+  nullTotalPriceSidebar();
+  nullTotalPriceOverlay();
+  nullTotalPriceButton();
+}
+
+function nullTotalPriceSidebar() {
+  let sidebarPriceRef = document.getElementById("total-price-sidebar-box");
+  sidebarPriceRef.innerHTML = "";
+}
+
+function nullTotalPriceOverlay() {
+  let overlayPriceRef = document.getElementById("total-price-overlay-box");
+  overlayPriceRef.innerHTML = "";
+}
+
+function nullTotalPriceButton() {
+  let buttonPriceRef = document.getElementById("buttonprice");
+  buttonPriceRef.innerHTML = "";
 }
