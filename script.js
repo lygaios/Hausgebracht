@@ -61,7 +61,7 @@ function removeDish(i) {
     dishes[i].amount = 0;
     cart[i].price = 0;
     cart.splice(i, 1);
-    nullTotalPrice()
+    nullTotalPrice();
   }
   renderDishes(i);
   renderSidebarCart(i);
@@ -96,7 +96,7 @@ function orderAndClear() {
   renderConfirmationMessageOverlay();
   for (let i = 0; i < dishes.length; i++) {
     dishes[i].amount = 0;
-  };
+  }
   for (let j = 0; j < cart.length; j++) {
     cart[j].amount = 0;
   }
