@@ -49,7 +49,9 @@ function addDish(i) {
     cart[i].amount++;
     dishes[i].amount++;
   }
-  renderData();
+  renderDishes(i);
+  renderSidebarCart(i);
+  renderOverlayCart(i);
 }
 
 function removeDish(i) {
@@ -62,7 +64,9 @@ function removeDish(i) {
     cart.splice(i, 1);
     nullTotalPrice();
   }
-  renderData();
+  renderDishes(i);
+  renderSidebarCart(i);
+  renderOverlayCart(i);
 }
 
 function calculateTotalPrice(i) {
@@ -98,7 +102,9 @@ function orderAndClear() {
   }
   cart = [];
   nullTotalPrice();
-  renderData();
+  renderDishes();
+  renderSidebarCart();
+  renderOverlayCart();
 }
 
 function renderConfirmationMessage() {
@@ -129,12 +135,6 @@ function removeConfirmationMessageSidebar() {
 function removeConfirmationMessageOverlay() {
   let confirmationRef = document.getElementById("confirmation-overlay");
   confirmationRef.innerHTML = "";
-}
-
-function renderData() {
-  renderDishes();
-  renderSidebarCart();
-  renderOverlayCart();
 }
 
 function nullTotalPrice() {
