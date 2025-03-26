@@ -16,27 +16,27 @@ function renderDishes() {
   for (let i = 0; i < dishes.length; i++) {
     dishesRef.innerHTML += getDishesTemplate(i);
 
-    renderSidebarCart(i);
-    renderOverlayCart(i);
+    renderSidebarCart();
+    renderOverlayCart();
   }
 }
 
-function renderSidebarCart(i) {
+function renderSidebarCart() {
   let sidebarCartRef = document.getElementById("sidebar-cart");
   sidebarCartRef.innerHTML = "";
   for (let i = 0; i < cart.length; i++) {
     sidebarCartRef.innerHTML += getCartTemplate(i);
-    getTotalPriceSidebar(i);
+    getTotalPriceSidebar();
   }
 }
 
-function renderOverlayCart(i) {
+function renderOverlayCart() {
   let overlayCartRef = document.getElementById("overlay-cart");
   overlayCartRef.innerHTML = "";
   for (let i = 0; i < cart.length; i++) {
     overlayCartRef.innerHTML += getCartTemplate(i);
-    getTotalPriceOverlay(i);
-    getTotalPriceButton(i);
+    getTotalPriceOverlay();
+    getTotalPriceButton();
   }
 }
 
@@ -59,14 +59,13 @@ function removeDish(i) {
     dishes[i].amount--;
   } else {
     dishes[i].amount = 0;
-    cart[i].price = 0;
     cart.splice(i, 1);
     nullTotalPrice();
   }
   renderData();
 }
 
-function calculateTotalPrice(i) {
+function calculateTotalPrice() {
   let totalPrice = 0;
   for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price.toFixed(2) * cart[i].amount;
@@ -74,19 +73,19 @@ function calculateTotalPrice(i) {
   return totalPrice.toFixed(2) + " € ";
 }
 
-function getTotalPriceSidebar(i) {
+function getTotalPriceSidebar() {
   let sidebarPriceRef = document.getElementById("total-price-sidebar-box");
-  sidebarPriceRef.innerHTML = calculateTotalPrice(i);
+  sidebarPriceRef.innerHTML = calculateTotalPrice();
 }
 
-function getTotalPriceOverlay(i) {
+function getTotalPriceOverlay() {
   let overlayPriceRef = document.getElementById("total-price-overlay-box");
-  overlayPriceRef.innerHTML = calculateTotalPrice(i);
+  overlayPriceRef.innerHTML = calculateTotalPrice();
 }
 
-function getTotalPriceButton(i) {
+function getTotalPriceButton() {
   let buttonPriceRef = document.getElementById("buttonprice");
-  buttonPriceRef.innerHTML = calculateTotalPrice(i);
+  buttonPriceRef.innerHTML = calculateTotalPrice();
 }
 
 function orderAndClear() {
