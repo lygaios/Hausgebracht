@@ -2,7 +2,7 @@ function getDishesTemplate(i) {
   return ` 
       <div class="dishes-box">
           <div class="data-block">
-              <h3>${dishes[i].name}</h2>
+              <h3>${dishes[i].name}</h3>
               <p>${dishes[i].price.toFixed(2)} €</p>
           </div>
             <button class="button" onclick="addDish(${i})">+</button>
@@ -14,7 +14,7 @@ function getCartTemplate(i) {
   return ` 
           <div class="cart-box">
               <div class="data-block">
-               <h3>${cart[i].name}</h2>
+               <h3>${cart[i].name}</h3>
                   <p>${cart[i].price.toFixed(2)} €</p>
               </div>
               <div class="interact-row">

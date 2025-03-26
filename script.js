@@ -41,6 +41,7 @@ function renderOverlayCart(i) {
 }
 
 function addDish(i) {
+  removeConfirmationMessage();
   if (dishes[i].amount == 0) {
     dishes[i].amount = 1;
     cart.push({ name: dishes[i].name, price: dishes[i].price, amount: 1 });
@@ -48,9 +49,7 @@ function addDish(i) {
     cart[i].amount++;
     dishes[i].amount++;
   }
-  renderDishes(i);
-  renderSidebarCart(i);
-  renderOverlayCart(i);
+  renderData();
 }
 
 function removeDish(i) {
@@ -63,9 +62,7 @@ function removeDish(i) {
     cart.splice(i, 1);
     nullTotalPrice();
   }
-  renderDishes(i);
-  renderSidebarCart(i);
-  renderOverlayCart(i);
+  renderData();
 }
 
 function calculateTotalPrice(i) {
@@ -92,8 +89,7 @@ function getTotalPriceButton(i) {
 }
 
 function orderAndClear() {
-  renderConfirmationMessageSidebar();
-  renderConfirmationMessageOverlay();
+  renderConfirmationMessage();
   for (let i = 0; i < dishes.length; i++) {
     dishes[i].amount = 0;
   }
@@ -102,9 +98,12 @@ function orderAndClear() {
   }
   cart = [];
   nullTotalPrice();
-  renderDishes();
-  renderSidebarCart();
-  renderOverlayCart();
+  renderData();
+}
+
+function renderConfirmationMessage() {
+  renderConfirmationMessageSidebar();
+  renderConfirmationMessageOverlay();
 }
 
 function renderConfirmationMessageSidebar() {
@@ -115,6 +114,27 @@ function renderConfirmationMessageSidebar() {
 function renderConfirmationMessageOverlay() {
   let confirmationRef = document.getElementById("confirmation-overlay");
   confirmationRef.innerHTML = `<p>Ihre Testbestellung war erfolgreich.</p>`;
+}
+
+function removeConfirmationMessage() {
+  removeConfirmationMessageSidebar();
+  removeConfirmationMessageOverlay();
+}
+
+function removeConfirmationMessageSidebar() {
+  let confirmationRef = document.getElementById("confirmation-sidebar");
+  confirmationRef.innerHTML = "";
+}
+
+function removeConfirmationMessageOverlay() {
+  let confirmationRef = document.getElementById("confirmation-overlay");
+  confirmationRef.innerHTML = "";
+}
+
+function renderData() {
+  renderDishes();
+  renderSidebarCart();
+  renderOverlayCart();
 }
 
 function nullTotalPrice() {

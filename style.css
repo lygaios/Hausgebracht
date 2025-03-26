@@ -61,6 +61,7 @@ h2 {
 }
 
 #main {
+  height: calc(100vh-180px);
   padding-bottom: 10px;
   display: flex;
   justify-content: center;
@@ -150,10 +151,12 @@ h2 {
   justify-content: flex-start;
   flex-wrap: wrap;
   border: solid 1px lightgray;
+  padding: 5px;
 }
 
 #overlay-cart-box {
   background-color: white;
+  height: 100rem;
   padding: 5px;
 }
 
@@ -187,6 +190,7 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   border: solid 1px lightgray;
+  padding: 5px;
 }
 
 .data-block {
@@ -216,7 +220,7 @@ h2 {
   font-size: 14px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 770px) {
   .hidemobile {
     display: none;
   }
@@ -250,7 +254,7 @@ h2 {
   }
 }
 
-@media (min-width: 751px) {
+@media (min-width: 771px) {
   .hidedesktop {
     display: none;
   }
