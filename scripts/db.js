@@ -28,7 +28,7 @@ let dishes = [
     name: "Obstsalat California",
     price: 9.99,
     amount: 0,
-  },
+  }
 ];
 
 let cart = [];

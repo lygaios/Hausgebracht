@@ -44,7 +44,7 @@ function addDish(i) {
   removeConfirmationMessage();
   if (dishes[i].amount >= 1) {
     dishes[i].amount++;
-    cart[i].amount++;
+    cart[i].amount + 1;
     renderData();
   } else if (dishes[i].amount == 0) {
     cart.push({ name: dishes[i].name, price: dishes[i].price, amount: 1 });
