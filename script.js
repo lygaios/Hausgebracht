@@ -41,16 +41,9 @@ function renderOverlayCart(i) {
 }
 
 function addDish(i) {
-  let newCartDishName = dishes[i].name;
-  let newCartDishPrice = dishes[i].price;
-  let newCartDishAmount = dishes[i].amount;
-
-  let newCartDish = { name: newCartDishName, price: newCartDishPrice, amount: newCartDishAmount };
-
-  if (newCartDishAmount == 0) {
-    cart.push(newCartDish);
-    cart[i].amount++;
-    dishes[i].amount++;
+  if (dishes[i].amount == 0) {
+    dishes[i].amount = 1;
+    cart.push({ name: dishes[i].name, price: dishes[i].price, amount: 1 });
   } else {
     cart[i].amount++;
     dishes[i].amount++;
