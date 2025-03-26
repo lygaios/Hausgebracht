@@ -42,17 +42,14 @@ function renderOverlayCart(i) {
 
 function addDish(i) {
   removeConfirmationMessage();
-  if (dishes[i].amount == 0) {
-    dishes[i].amount = 1;
-    cart.push({ name: dishes[i].name, price: dishes[i].price, amount: 1 });
-  } else {
-    for (let i = 0; i < cart.length; i++) {
-    cart[i].amount++;
+  if (dishes[i].amount >= 1) {
     dishes[i].amount++;
-    }
-    renderDishes(i);
-    renderSidebarCart(i);
-    renderOverlayCart(i);
+    cart[i].amount++;
+    renderData();
+  } else if (dishes[i].amount == 0) {
+    cart.push({ name: dishes[i].name, price: dishes[i].price, amount: 1 });
+    dishes[i].amount = 1;
+    renderData();
   }
 }
 
@@ -66,9 +63,7 @@ function removeDish(i) {
     cart.splice(i, 1);
     nullTotalPrice();
   }
-  renderDishes(i);
-  renderSidebarCart(i);
-  renderOverlayCart(i);
+  renderData();
 }
 
 function calculateTotalPrice(i) {
@@ -104,9 +99,7 @@ function orderAndClear() {
   }
   cart = [];
   nullTotalPrice();
-  renderDishes();
-  renderSidebarCart();
-  renderOverlayCart();
+  renderData();
 }
 
 function renderConfirmationMessage() {
@@ -158,4 +151,10 @@ function nullTotalPriceOverlay() {
 function nullTotalPriceButton() {
   let buttonPriceRef = document.getElementById("buttonprice");
   buttonPriceRef.innerHTML = "";
+}
+
+function renderData() {
+  renderDishes();
+  renderSidebarCart();
+  renderOverlayCart();
 }

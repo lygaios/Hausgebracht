@@ -75,7 +75,7 @@ body {
 }
 
 #left {
-  min-width: 500px;
+  min-width: 480px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -124,7 +124,7 @@ body {
 }
 
 #menu-box {
-  min-width: 480px;
+  min-width: 460px;
   min-height: 400px;
   padding-inline: 5px;
   padding-bottom: 5px;
@@ -240,7 +240,7 @@ body {
   }
 
   #menu-box {
-    min-width: 260px;
+    min-width: 240px;
   }
 
   #overlay-cart {
