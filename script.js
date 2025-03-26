@@ -58,7 +58,7 @@ function removeDish(i) {
     cart[i].amount--;
     dishes[i].amount--;
   } else {
-    dishes[i].amount--;
+    dishes[i].amount = 0;
     cart[i].price = 0;
     cart.splice(i, 1);
   }
@@ -93,8 +93,13 @@ function getTotalPriceButton(i) {
 function orderAndClear() {
   renderConfirmationMessageSidebar();
   renderConfirmationMessageOverlay();
+  for (let i = 0; i < dishes.length; i++) {
+    dishes[i].amount = 0;
+  };
+  for (let j = 0; j < cart.length; j++) {
+    cart[j].amount = 0;
+  }
   cart = [];
-  dishes.amount = 0;
   renderDishes();
   renderSidebarCart();
   renderOverlayCart();
