@@ -36,5 +36,3 @@ let dishes = [
     amount: 0,
   },
 ];
-
-let cart = [];

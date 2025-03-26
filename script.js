@@ -24,8 +24,10 @@ function renderDishes() {
 function renderSidebarCart() {
   let sidebarCartRef = document.getElementById("sidebar-cart");
   sidebarCartRef.innerHTML = "";
-  for (let i = 0; i < cart.length; i++) {
-    sidebarCartRef.innerHTML += getCartTemplate(i);
+  for (let i = 0; i < dishes.length; i++) {
+    if (dishes[i].amount > 0) {
+      sidebarCartRef.innerHTML += getCartTemplate(i);
+    }
     getTotalPriceSidebar();
   }
 }
@@ -33,51 +35,38 @@ function renderSidebarCart() {
 function renderOverlayCart() {
   let overlayCartRef = document.getElementById("overlay-cart");
   overlayCartRef.innerHTML = "";
-  for (let i = 0; i < cart.length; i++) {
-    overlayCartRef.innerHTML += getCartTemplate(i);
-    getTotalPriceOverlay();
-    getTotalPriceButton();
+  for (let i = 0; i < dishes.length; i++) {
+    if (dishes[i].amount > 0) {
+      overlayCartRef.innerHTML += getCartTemplate(i);
+      getTotalPriceOverlay();
+      getTotalPriceButton();
+    }
   }
 }
 
 function addDish(i) {
   removeConfirmationMessage();
-  let cartDish = cart.find(cartDish => cartDish.id === dishes[i].id);
-  if (cartDish) {
-    cartDish.amount++;
-  } else {
-    cart.push({ id: dishes[i].id, name: dishes[i].name, price: dishes[i].price, amount: 1 });
-   
-  };
-  if (dishes[i].amount === undefined) {
+  if (dishes[i].amount == 0) {
     dishes[i].amount = 1;
-  } else {
+  } else if (dishes[i].amount >= 1) {
     dishes[i].amount++;
   }
   renderData();
 }
 
 function removeDish(i) {
-  let cartDish = cart.find(cartDish => cartDish.id === dishes[i].id);
-  if (cartDish.amount == 1) {
-    cart.splice(cartDish, 1);
-    nullTotalPrice();
-  } else if (cartDish.amount > 1) {
-    cartDish.amount--;
-  };
   if (dishes[i].amount > 1) {
-    dishes[i].amount--; 
+    dishes[i].amount--;
   } else if (dishes[i].amount == 1) {
     dishes[i].amount = 0;
-  };
+  }
   renderData();
 }
 
-
 function calculateTotalPrice() {
   let totalPrice = 0;
-  for (let i = 0; i < cart.length; i++) {
-    totalPrice += cart[i].price.toFixed(2) * cart[i].amount;
+  for (let i = 0; i < dishes.length; i++) {
+    totalPrice += dishes[i].price.toFixed(2) * dishes[i].amount;
   }
   return totalPrice.toFixed(2) + " € ";
 }
@@ -102,10 +91,6 @@ function orderAndClear() {
   for (let i = 0; i < dishes.length; i++) {
     dishes[i].amount = 0;
   }
-  for (let j = 0; j < cart.length; j++) {
-    cart[j].amount = 0;
-  }
-  cart = [];
   nullTotalPrice();
   renderData();
 }
